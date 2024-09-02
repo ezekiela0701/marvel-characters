@@ -59,8 +59,8 @@ class MarvelApiService
         $characters = [];
         foreach ($datas['data']['results'] as $character) {
 
-            $characters[] = [
-                'name' => $character['name'],
+            $characters[]   = [
+                'name'      => $character['name'],
                 'thumbnail' => $character['thumbnail']['path'] . '.' . $character['thumbnail']['extension']
             ];
 

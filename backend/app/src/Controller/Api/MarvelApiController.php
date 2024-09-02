@@ -22,8 +22,8 @@ class MarvelApiController extends AbstractController
     {
 
         // Récupérer les paramètres de limite et offset depuis la requête
-        $limit = $_GET['limit'] ?? 20;
-        $offset = $_GET['offset'] ?? 0;
+        $limit      = $_GET['limit'] ?? 20;
+        $offset     = $_GET['offset'] ?? 0;
 
         $characters = $this->marvelApi->getListCharacters('/characters' , $limit , $offset);
 
