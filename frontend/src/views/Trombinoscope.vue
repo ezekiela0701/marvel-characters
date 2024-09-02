@@ -4,16 +4,22 @@
     </div>
   
     <div class="trombinoscope">
-      <div v-if="characters.length === 0">
-        Loading characters...
-      </div>
+        <div v-if="isLoading">
+          <p>Loading characters...</p>
+          <!-- Vous pouvez remplacer cette ligne par une animation de chargement si nécessaire -->
+        </div>
       <div v-else>
-        <div class="character-grid">
-          <CharacterCard 
-            v-for="character in characters" 
-            :key="character.name" 
-            :character="character" 
-          />
+        <div v-if="characters.length === 0">
+          <p>No characters found.</p>
+        </div>
+        <div v-else>
+          <div class="character-grid">
+            <CharacterCard 
+              v-for="character in characters" 
+              :key="character.name" 
+              :character="character" 
+            />
+        </div>
         </div>
       </div>
   
@@ -37,7 +43,10 @@
       return {
         characters: [],
         limit: 20,
-        offset: 0
+        offset: 0,
+        total: 0,         
+        isLoading: false  
+
       };
     },
     mounted() {
@@ -45,10 +54,21 @@
     },
     methods: {
       async loadCharacters() {
+
+        this.isLoading = true; 
+
         try {
+
           this.characters = await fetchMarvelCharacters(this.limit, this.offset);
+
         } catch (error) {
+
           console.error('Erreur lors du chargement des personnages:', error);
+
+        }finally {
+
+          this.isLoading = false;  
+
         }
       },
       nextPage() {
