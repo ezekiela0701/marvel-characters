@@ -42,3 +42,6 @@ URL FRONT : http://localhost:8082
     sudo docker compose exec app bash
 
     ./vendor/bin/phpunit tests/Controller/MarvelApiControllerTest.php
+
+#### Lancement test backend ####
+./vendor/bin/phpunit 
