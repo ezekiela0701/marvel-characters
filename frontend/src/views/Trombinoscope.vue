@@ -6,7 +6,6 @@
     <div class="trombinoscope">
         <div v-if="isLoading">
           <p>Loading characters...</p>
-          <!-- Vous pouvez remplacer cette ligne par une animation de chargement si nécessaire -->
         </div>
       <div v-else>
         <div v-if="characters.length === 0">
