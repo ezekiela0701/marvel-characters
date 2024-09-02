@@ -1,5 +1,4 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-console.log(API_BASE_URL);
 
 export async function fetchMarvelCharacters(limit, offset) {
   try {
@@ -7,7 +6,7 @@ export async function fetchMarvelCharacters(limit, offset) {
     const result = await response.json();
     
     if (result.success) {
-      return result.data;  // Retourner les données des personnages
+      return result.data;  // Return data character
     } else {
       throw new Error(result.message);
     }
