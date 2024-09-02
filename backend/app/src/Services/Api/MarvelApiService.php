@@ -66,6 +66,8 @@ class MarvelApiService
 
         }
 
+        $characters['total'] = $datas['data']['total'] ;
+
         return $characters;
 
     }
