@@ -64,8 +64,8 @@
     }
   };
   </script>
-  
   <style scoped>
+  /* Style du titre de la page */
   .page-title {
     text-align: center;
     margin-bottom: 20px;
@@ -74,7 +74,7 @@
     border-radius: 8px;
   }
   .page-title h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
     letter-spacing: 1px;
@@ -82,28 +82,71 @@
     margin: 0;
   }
   
+  /* Trombinoscope grid - Mobile first */
+  .character-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+    justify-items: center;
+  }
+  
+  /* Pagination styles */
   .pagination {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5px;
   }
   .pagination button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
+  .pagination button.active {
+    background-color: #0056b3; /* Highlight the active page */
+  }
   .pagination button:disabled {
     background-color: #cccccc;
   }
   
-  .character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 10px;
+  /* Responsive adjustments for tablet screens (min-width: 600px) */
+  @media screen and (min-width: 600px) {
+    .character-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  
+    .page-title h2 {
+      font-size: 24px;
+    }
+  }
+  
+  /* Responsive adjustments for larger screens (min-width: 900px) */
+  @media screen and (min-width: 900px) {
+    .character-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  
+    .page-title h2 {
+      font-size: 28px;
+    }
+  }
+  
+  /* Responsive adjustments for desktop screens (min-width: 1200px) */
+  @media screen and (min-width: 1200px) {
+    .character-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  
+    .page-title h2 {
+      font-size: 32px;
+    }
   }
   </style>
   
