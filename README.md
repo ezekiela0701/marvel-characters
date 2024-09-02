@@ -19,6 +19,7 @@ Base url + endpoint : http://localhost:8000/api/marvel/characters
 -cd frontend
 -npm install
 -sudo docker build -t marvel-test .
+
 -sudo docker run -it -p 8082:80 --rm --name dockerize-vuejs-app marvel-test
 
 URL FRONT : http://localhost:8082
