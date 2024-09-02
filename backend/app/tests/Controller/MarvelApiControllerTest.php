@@ -22,7 +22,6 @@ class MarvelApiControllerTest extends WebTestCase
 
         $this->assertIsArray($responseData['data']);
 
-        // Ajustez selon le nombre attendu de résultats
         $this->assertGreaterThanOrEqual(1, count($responseData['data'])); 
     }
 
@@ -30,9 +29,9 @@ class MarvelApiControllerTest extends WebTestCase
     public function testGetCharactersNoData()
     {
         $client = static::createClient();
-        $client->request('GET', '/api/marvel/characters?limit=20&offset=9999'); // Utilisez un offset qui est probablement vide
+        $client->request('GET', '/api/marvel/characters?limit=20&offset=9999999'); 
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode()); // Changer le code attendu en 204
+        $this->assertEquals(200, $client->getResponse()->getStatusCode()); 
 
         $responseData = json_decode($client->getResponse()->getContent(), true);
 
