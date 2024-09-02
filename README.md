@@ -29,3 +29,16 @@ Base url + endpoint : http://localhost:8000/api/marvel/characters
 -sudo docker run -it -p 8082:80 --rm --name dockerize-vuejs-app marvel-test
 
 URL FRONT : http://localhost:8082
+
+
+#### Lancement test unitaire backend ####
+
+-sudo docker compose exec app bash
+
+    ./vendor/bin/phpunit tests/Services/MarvelApiServiceTest.php
+
+#### Lancement test fonctionnel backend ####
+
+-sudo docker compose exec app bash
+
+    composer require --dev symfony/browser-kit symfony/css-selector

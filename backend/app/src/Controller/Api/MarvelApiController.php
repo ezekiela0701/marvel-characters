@@ -27,7 +27,7 @@ class MarvelApiController extends AbstractController
 
         $characters = $this->marvelApi->getListCharacters('/characters' , $limit , $offset);
 
-        if ($characters) {
+        if (count($characters) > 0) {
             # code...
             
             return new JsonResponse([
@@ -43,9 +43,9 @@ class MarvelApiController extends AbstractController
             # code...
             return new JsonResponse([
                 "data"      => [], 
-                "code"      => Response::HTTP_BAD_REQUEST , 
+                "code"      => Response::HTTP_NO_CONTENT , 
                 "success"   => false ,
-                "message"   => "No request found" ,
+                "message"   => "No data found" ,
         
             ]);
         }
