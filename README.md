@@ -1,4 +1,4 @@
-# marvel-fluentech
+# marvel-characters
 
 #### Clonner le projet #####
     git clone https://github.com/ezekiela0701/marvel-fluentech.git
