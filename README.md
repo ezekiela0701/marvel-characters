@@ -1,7 +1,7 @@
 # marvel-characters
 
 #### Clonner le projet #####
-    git clone https://github.com/ezekiela0701/marvel-fluentech.git
+    git clone https://github.com/ezekiela0701/marvel-characters.git
 
 #### bascule en branche develop ####
     git checkout develop
